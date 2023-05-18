@@ -12,10 +12,12 @@ btnDetail.addEventListener("click", (e) => {
   e.preventDefault();
   overlay.classList.add("active-overlay");
 });
+// close overlay
 const closeProfilOverlay = document.getElementById("closeProfilOverlay");
 closeProfilOverlay.addEventListener("click", () => {
   overlay.classList.remove("active-overlay");
 });
+const contentOverlay = document.querySelector(".content-profil-overlay");
 
 // klik diluar element
 document.addEventListener("click", (e) => {
@@ -24,8 +26,7 @@ document.addEventListener("click", (e) => {
     wrapperNavList.classList.remove("toggle-nav-active");
   }
 
-  if (!btnDetail.contains(e.target) && overlay.contains(e.target)) {
+  if (!btnDetail.contains(e.target) && !contentOverlay.contains(e.target)) {
     overlay.classList.remove("active-overlay");
   }
-  // close overlay
 });
